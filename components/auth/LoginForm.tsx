@@ -3,12 +3,12 @@ import styles from "./Auth.module.scss";
 import { setCookie } from "nookies";
 import { Button, Form, Input, notification } from "antd";
 import { LoginFormDTO } from "@/api/dto/auth.dto";
-import { login } from '@/api/auth';
+import * as Api from '@/api';
 
 export const LoginForm: React.FC = () => {
   const onSubmit = async (values: LoginFormDTO) => {
     try {
-      const { token } = await login(values);
+      const { token } = await Api.auth.login(values);
 
       notification.success({
         message: "Успешно!",

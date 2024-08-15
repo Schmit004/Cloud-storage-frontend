@@ -3,12 +3,12 @@ import styles from "./Auth.module.scss";
 import { setCookie } from "nookies";
 import { Button, Form, Input, notification } from "antd";
 import { RegisterFormDTO } from "@/api/dto/auth.dto";
-import { register } from "@/api/auth";
+import * as Api from "@/api";
 
 export const RegisterForm: React.FC = () => {
   const onSubmit = async (values: RegisterFormDTO) => {
     try {
-      const { token } = await register(values);
+      const { token } = await Api.auth.register(values);
 
       notification.success({
         message: "Успешно!",
