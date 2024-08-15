@@ -20,7 +20,9 @@ export const RegisterForm: React.FC = () => {
         path: "/",
       });
 
-      location.href = "/dashboard";
+      setTimeout(() => {
+        location.href = "/dashboard";
+      }, 2000);
     } catch (err) {
       console.warn(err);
 

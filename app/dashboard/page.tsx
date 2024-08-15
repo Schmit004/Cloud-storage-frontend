@@ -2,9 +2,6 @@
 
 import Head from "next/head";
 import { NextPage } from "next";
-import { Tabs } from "antd";
-import { LoginForm } from "@/components/auth/LoginForm";
-import { RegisterForm } from "@/components/auth/RegisterForm";
 
 const Dashboard: NextPage = () => {
   return (
