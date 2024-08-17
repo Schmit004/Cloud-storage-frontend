@@ -1,37 +1,19 @@
-import { GetServerSidePropsContext, NextPage } from "next";
-import { checkAuth } from "@/utils/checkAuth";
-import * as Api from "@/api";
+import { Header } from '@/components/Header';
+import * as Api from '@/api';
 
-
-export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-  const authProps = await checkAuth(ctx);
-
-  if ("redirect" in authProps) {
-    return authProps;
-  }
+export default async function Dashboard() {
+  let items: any[] = [];
 
   try {
-    const items = await Api.files.getAll();
-
-    return {
-      props: {
-        items,
-      },
-    };
+    items = await Api.files.getAll();
   } catch (err) {
     console.log(err);
-    return {
-      props: { items: [] },
-    };
   }
-};
 
-const Dashboard: NextPage = () => {
   return (
-      <main style={{ width: 400, margin: "50px auto" }}>
-        <h1>Dashboard</h1>
-      </main>
+    <main>
+      <Header />
+      <h1>Dashboard</h1>
+    </main>
   );
-};
-
-export default Dashboard;
+}
