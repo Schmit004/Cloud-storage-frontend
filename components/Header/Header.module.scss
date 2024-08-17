@@ -1,5 +1,5 @@
 .root {
-  background-color: #0071ce !important;
+  background-color: #254662 !important;
 
   .headerLogo {
     display: flex;
@@ -58,4 +58,9 @@
 
 .headerRight {
   cursor: pointer;
+
+  svg {
+    margin: 0 auto;
+    font-size: 20px;
+  }
 }

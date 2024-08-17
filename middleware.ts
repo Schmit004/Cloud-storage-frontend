@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import axios from '@/core/axios';
-import nookies from 'nookies';
 import * as Api from '@/api';
 
 export async function middleware(req: NextRequest) {
