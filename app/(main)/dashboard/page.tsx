@@ -1,4 +1,3 @@
-import { Header } from '@/components/Header';
 import * as Api from '@/api';
 
 export default async function Dashboard() {
@@ -12,7 +11,6 @@ export default async function Dashboard() {
 
   return (
     <main>
-      <Header />
       <h1>Dashboard</h1>
     </main>
   );
