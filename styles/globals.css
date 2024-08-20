@@ -36,3 +36,17 @@ a {
 .empty-block {
   margin: 200px;
 }
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  min-height: 600px;
+  background: #ffffff;
+  border-radius: 15px;
+}
+
+.main {
+  min-width: 480px;
+  max-width: 1200px;
+  margin: 40px auto;
+}

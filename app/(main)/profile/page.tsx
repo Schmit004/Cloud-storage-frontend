@@ -28,22 +28,20 @@ const ProfilePage: NextPage = () => {
   }
 
   return (
-    <main>
-      <div className={styles.root}>
-        <h1>Мой профиль</h1>
-        <br />
-        <p>
-          ID: <b>{userData.id}</b>
-        </p>
-        <p>
-          Полное имя: <b>{userData.fullName}</b>
-        </p>
-        <p>
-          E-Mail: <b>{userData.email}</b>
-        </p>
-        <br />
-      </div>
-    </main>
+    <div className={styles.root}>
+      <h1>Мой профиль</h1>
+      <br />
+      <p>
+        ID: <b>{userData.id}</b>
+      </p>
+      <p>
+        Полное имя: <b>{userData.fullName}</b>
+      </p>
+      <p>
+        E-Mail: <b>{userData.email}</b>
+      </p>
+      <br />
+    </div>
   );
 };
 

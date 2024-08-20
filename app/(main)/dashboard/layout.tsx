@@ -12,7 +12,7 @@ const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const selectedMenu = usePathname();
 
   return (
-    <main className={styles.dashboardContainer}>
+    <section className={styles.dashboardContainer}>
       <div className={styles.sidebar}>
         <UploadButton />
         <Menu
@@ -43,7 +43,7 @@ const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
       </div>
 
       <div className="container">{children}</div>
-    </main>
+    </section>
   );
 };
 

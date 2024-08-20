@@ -1,4 +1,5 @@
 import * as Api from '@/api';
+import styles from '@/styles/Dashboard.module.scss';
 
 export default async function Dashboard() {
   let items: any[] = [];
@@ -10,8 +11,6 @@ export default async function Dashboard() {
   }
 
   return (
-    <main>
-      <h1>Dashboard</h1>
-    </main>
+    <h1>Dashboard</h1>
   );
 }
