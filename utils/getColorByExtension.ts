@@ -6,6 +6,7 @@ const extColor = {
   png: "orange",
   jpg: "orange",
   jpeg: "orange",
+  webp: "orange",
   zip: "red",
 } as const;
 

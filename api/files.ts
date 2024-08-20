@@ -13,7 +13,6 @@ export const remove = (ids: number[]): Promise<void> => {
 
 export const uploadFile = async (options: any) => {
   const { onSuccess, onError, file, onProgress } = options;
-
   const formData = new FormData();
   formData.append("file", file);
 
@@ -25,7 +24,7 @@ export const uploadFile = async (options: any) => {
   };
 
   try {
-    const { data } = await axios.post("files", formData, config);
+    const { data } = await axios.post("files/upload", formData, config);
 
     onSuccess();
 
