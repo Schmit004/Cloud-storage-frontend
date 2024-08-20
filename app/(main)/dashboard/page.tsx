@@ -1,16 +1,23 @@
+"use client";
+
 import * as Api from '@/api';
-import styles from '@/styles/Dashboard.module.scss';
+import { FileItem } from '@/api/dto/files.dto';
+import { Files } from '@/module/Files';
+import { useEffect, useState } from 'react';
 
-export default async function Dashboard() {
-  let items: any[] = [];
+export default function Dashboard() {
+  const [files, setFiles] = useState<FileItem[]>([]);
 
-  try {
-    items = await Api.files.getAll();
-  } catch (err) {
-    console.log(err);
-  }
+  useEffect(() => {
+    const fetchFiles = async () => {
+      const files = await Api.files.getAll();
+      setFiles(files);
+    };
+
+    fetchFiles();
+  }, []);
 
   return (
-    <h1>Dashboard</h1>
+    <Files items={files} withActions />
   );
 }

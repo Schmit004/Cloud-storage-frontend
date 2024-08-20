@@ -1,4 +1,3 @@
-
 import React from "react";
 import styles from "./FileCard.module.scss";
 import { isImage } from "@/utils/isImage";

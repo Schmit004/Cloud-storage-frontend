@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FileItem } from "@/api/dto/files.dto";
 import { FileActions } from "@/components/FileActions";
 import { FileList, FileSelectType } from "@/components/FileList";
@@ -11,8 +11,12 @@ interface FilesProps {
 }
 
 export const Files: React.FC<FilesProps> = ({ items, withActions }) => {
-  const [files, setFiles] = React.useState(items || []);
+  const [files, setFiles] = useState(items || []);
   const [selectedIds, setSelectedIds] = React.useState<number[]>([]);
+
+  useEffect(() => {
+    setFiles(items);
+  }, [items]);
 
   const onFileSelect = (id: number, type: FileSelectType) => {
     if (type === "select") {
