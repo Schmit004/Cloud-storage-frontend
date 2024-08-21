@@ -1,6 +1,7 @@
 const extColor = {
   pdf: "purple",
   xls: "green",
+  xlsx: "green",
   doc: "blue",
   txt: "blue",
   png: "orange",
